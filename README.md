@@ -25,6 +25,10 @@ dotnet run --project src/KonyakinaNick
 | 4       | The design & animation desk — frames, render time, layers      |
 | 5       | A Konyakina street memory                                       |
 | 6       | A random event                                                  |
+| 7       | Boil some crayfish — meaning classified, forever 🦞             |
+| 8       | Spring cat opera — the yard's turf-war serenades 🐱             |
+| 9       | The суєта — Mamsurova street, Schlotz, the hustle               |
+| 10      | IT grind — no batrak work, just the keyboard ⌨️                 |
 | 0       | Exit                                                            |
 
 ## Layout
@@ -32,7 +36,7 @@ dotnet run --project src/KonyakinaNick
 ```
 src/KonyakinaNick/
   Program.cs    — the TV guide menu
-  Studio.cs     — shows, moods, memories, events
+  Studio.cs     — shows, moods, memories, events, crayfish, spring cats, the суєта, IT grind
   RaveTrip.cs   — a weekend at Skhema or Povitrya
 ```
 

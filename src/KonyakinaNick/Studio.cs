@@ -78,6 +78,70 @@ public static class Studio
 
     public static string Memory(int seed) => "🏠 " + Memories[Math.Abs(seed) % Memories.Length];
 
+    /// <summary>
+    /// Every so often, Helga "boils crayfish". What that actually means, no one on
+    /// Konyakina street has ever established. We leave it, respectfully, unknown. 🦞
+    /// </summary>
+    public static string BoilCrayfish()
+    {
+        var lines = new[]
+        {
+            "Helga's boiling crayfish again. What does that mean? That's between her and the crayfish.",
+            "The crayfish are on. Nobody asks. Nobody has ever asked. The mystery holds.",
+            "\"Boiling crayfish,\" she says, with a look that knows something you don't. She does.",
+            "Steam, a pot, and a private joke a decade deep. The meaning stays classified."
+        };
+        return lines[Rng.Next(lines.Length)];
+    }
+
+    /// <summary>
+    /// Spring on the street: the local cats hold a yowling turf-war opera in the
+    /// yard, and Helga finds the whole production absolutely hilarious.
+    /// </summary>
+    public static string SpringCatOpera(int cats)
+    {
+        cats = Math.Clamp(cats, 0, 30);
+        if (cats == 0)
+            return "Quiet yard tonight. Even the tomcats took the evening off. Helga's almost disappointed.";
+
+        var decibels = 40 + cats * 4;
+        return $"{cats} cat(s) in the yard, negotiating territory at full volume — {decibels} dB of spring opera.\n" +
+               "Helga watches from the window, delighted. Best show Nickelodeon never aired. 🐱🎶";
+    }
+
+    /// <summary>
+    /// Helga is plugged into all of it: Mamsurova street, the old crew, Schlotz,
+    /// and the суєта (the hustle) — she reads the whole scene better than anyone.
+    /// </summary>
+    public static string TheSuyeta()
+    {
+        var lines = new[]
+        {
+            "Mamsurova street, the old crew, Schlotz, the суєта — Helga knows every thread of it.",
+            "She knew Schlotz too. When his name comes up she just nods: 'suyetit, always suyetit.'",
+            "Ask her about Mamsurova and she'll map the whole block from memory, corner by corner.",
+            "The суєта doesn't move without her clocking it first. Three steps ahead, quietly."
+        };
+        return "🌆 " + lines[Rng.Next(lines.Length)];
+    }
+
+    /// <summary>
+    /// No "batrak" drudge-work for Helga — same as her friend. So she grinds the
+    /// IT hustle instead, learning it till it clicks and the freedom follows.
+    /// </summary>
+    public static string ItGrind(int hours)
+    {
+        hours = Math.Clamp(hours, 0, 16);
+        var progress = hours switch
+        {
+            0    => "Day off the grind. Even the суєта rests. Briefly.",
+            <= 3 => "A few hours in the code today. No batrak work — she'd rather build the exit.",
+            <= 8 => "A solid shift at the IT grind. Same plan as her friend: skip the drudgery, learn the craft.",
+            _    => "All-day deep grind. Bugs down, skills up. The batrak life doesn't stand a chance."
+        };
+        return $"⌨️ {hours} hour(s) on the IT hustle.\n{progress}";
+    }
+
     private static readonly string[] Events =
     {
         "Helga is at Skhema in Kyiv. Expect a 'miss you, football head' text at 4 AM. 💌",
@@ -87,7 +151,11 @@ public static class Studio
         "She redraws your logo for the third time. It's perfect now. ...And now again.",
         "Hey Arnold! rerun comes on. Helga goes quiet. That's the one.",
         "New colour palette pinned above the desk. The whole flat is now that shade of teal.",
-        "3 AM, headphones on, tablet pen flying. Do not disturb the animator."
+        "3 AM, headphones on, tablet pen flying. Do not disturb the animator.",
+        "Helga's boiling crayfish again. Ask no questions; receive no answers. 🦞",
+        "Spring in the yard: the tomcats strike up their turf-war opera and Helga cackles. 🐱",
+        "Schlotz comes up in conversation. She goes quiet, then: 'suyetit, always.' 🕯️",
+        "No batrak work for her — headphones on, IDE open, grinding the IT hustle. ⌨️"
     };
 
     public static string RandomEvent() => Events[Rng.Next(Events.Length)];

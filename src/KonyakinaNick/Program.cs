@@ -26,6 +26,10 @@ while (true)
         case "4": DesignDesk(); break;
         case "5": StreetMemory(); break;
         case "6": Console.WriteLine("🎲 " + Studio.RandomEvent()); break;
+        case "7": Console.WriteLine("🦞 " + Studio.BoilCrayfish()); break;
+        case "8": SpringCats(); break;
+        case "9": Console.WriteLine(Studio.TheSuyeta()); break;
+        case "10": ItGrind(); break;
         case "0" or "q" or "quit":
             Console.WriteLine("Bye, football head. 💛");
             return;
@@ -70,6 +74,10 @@ static void Menu()
     Console.WriteLine("  4) The design & animation desk");
     Console.WriteLine("  5) A Konyakina street memory");
     Console.WriteLine("  6) Random event");
+    Console.WriteLine("  7) Boil some crayfish (don't ask) 🦞");
+    Console.WriteLine("  8) Spring cat opera (turf-war serenades)");
+    Console.WriteLine("  9) The суєта (Mamsurova · Schlotz · hustle)");
+    Console.WriteLine(" 10) IT grind (no batrak work)");
     Console.WriteLine("  0) Exit");
 }
 
@@ -119,6 +127,22 @@ static void StreetMemory()
     var seed = (int)AskNumber("Enter any number (a year, an age, anything): ");
     Console.WriteLine();
     Console.WriteLine(Studio.Memory(seed));
+}
+
+static void SpringCats()
+{
+    Console.WriteLine("— Spring cat opera —");
+    var cats = (int)AskNumber("How many cats in the yard tonight?: ");
+    Console.WriteLine();
+    Console.WriteLine(Studio.SpringCatOpera(cats));
+}
+
+static void ItGrind()
+{
+    Console.WriteLine("— IT grind —");
+    var hours = (int)AskNumber("Hours at the keyboard today?: ");
+    Console.WriteLine();
+    Console.WriteLine(Studio.ItGrind(hours));
 }
 
 // ---------------------------------------------------------------------
